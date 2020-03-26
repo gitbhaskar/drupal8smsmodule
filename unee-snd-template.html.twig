@@ -1,0 +1,30 @@
+{% if snd_var is empty %}
+<p>Data not found.</p>
+{% else %}
+<table class="table">
+<thead>
+<tr>
+	<th>{{ 'Sr. No.'|t }}</th>
+	<th>{{ 'State/UT' }}</th>
+	<th>{{ 'SND Name' }}</th>
+	<th>{{ 'Department' }}</th>
+	<th>{{ 'Address' }}</th>
+	<th>{{ 'Email' }}</th>
+</tr>
+</thead>
+<tbody>
+{% set i=1 %}
+{% for item in snd_var %}
+<tr>
+	<td>{{ i }}</td>
+	<td>{{ item.state }}</td>
+	<td>{{ item.name }}</td>
+	<td>{{ item.department_name }}</td>
+	<td>{{ item.official_address }}</td>
+	<td>{{ item.email }}</td>
+</tr>
+{% set i=i+1 %}
+{% endfor %}
+</tbody>
+</table>
+{% endif %}
